@@ -492,7 +492,8 @@ __STATIC_FORCEINLINE q31_t arm_nn_read_q15x2_ia(const q15_t **in_q15)
 {
     q31_t val;
 
-    memcpy(&val, *in_q15, 4);
+    //memcpy(&val, *in_q15, 4);
+    val = *((q31_t*)*in_q15);
     *in_q15 += 2;
 
     return (val);
@@ -506,7 +507,8 @@ __STATIC_FORCEINLINE q31_t arm_nn_read_q15x2_ia(const q15_t **in_q15)
 __STATIC_FORCEINLINE q31_t arm_nn_read_q7x4_ia(const q7_t **in_q7)
 {
     q31_t val;
-    memcpy(&val, *in_q7, 4);
+    //memcpy(&val, *in_q7, 4);
+    val = *((q31_t*)*in_q7);
     *in_q7 += 4;
 
     return (val);
@@ -520,7 +522,8 @@ __STATIC_FORCEINLINE q31_t arm_nn_read_q7x4_ia(const q7_t **in_q7)
 __STATIC_FORCEINLINE q31_t arm_nn_read_q15x2(const q15_t *in_q15)
 {
     q31_t val;
-    memcpy(&val, in_q15, 4);
+    //memcpy(&val, in_q15, 4);
+    val = *((q31_t*)in_q15);
 
     return (val);
 }
@@ -533,7 +536,8 @@ __STATIC_FORCEINLINE q31_t arm_nn_read_q15x2(const q15_t *in_q15)
 __STATIC_FORCEINLINE q31_t arm_nn_read_q7x4(const q7_t *in_q7)
 {
     q31_t val;
-    memcpy(&val, in_q7, 4);
+    //memcpy(&val, in_q7, 4);
+    val = *((q31_t*)in_q7);
 
     return (val);
 }
@@ -962,7 +966,8 @@ __STATIC_FORCEINLINE void arm_nn_write_q15x2_ia(q15_t **dest_q15, q31_t src_q31)
 {
     q31_t val = src_q31;
 
-    memcpy(*dest_q15, &val, 4);
+    //memcpy(*dest_q15, &val, 4);
+    *((q31_t*)*dest_q15) = val;
     *dest_q15 += 2;
 }
 
