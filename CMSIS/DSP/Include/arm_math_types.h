@@ -85,7 +85,6 @@ extern "C"
 
 
 #include <string.h>
-#include <math.h>
 #include <float.h>
 #include <limits.h>
 

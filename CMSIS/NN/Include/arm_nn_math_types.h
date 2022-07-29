@@ -90,7 +90,6 @@ extern "C" {
 
 #include <float.h>
 #include <limits.h>
-#include <math.h>
 #include <string.h>
 
 /* evaluate ARM DSP feature */
